@@ -13,6 +13,11 @@ class Book(models.Model):
     title = models.CharField(max_length=50)    
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='books')
 
+    class Meta:
+        permission = [
+            
+        ]
+
     def __str__(self):
         return self.name
 
