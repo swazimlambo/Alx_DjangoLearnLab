@@ -14,8 +14,8 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='books')
 
     class Meta:
-        permission = [
-            
+        permissions = [
+
         ]
 
     def __str__(self):
