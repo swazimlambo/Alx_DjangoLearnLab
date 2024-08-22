@@ -49,3 +49,11 @@ def librarian_view(request):
 @permission_required('relationship_app.can_add_book')
 def can_add_book(request):
     return render(request, 'relationship_app/can_add_book.html')
+
+@permission_required('relationship_app.can_edit_book')
+def can_add_book(request):
+    return render(request, 'relationship_app/can_add_book.html')
+
+@permission_required('relationship_app.can_delete_book')
+def can_add_book(request):
+    return render(request, 'relationship_app/can_add_book.html')
