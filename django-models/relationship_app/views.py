@@ -30,3 +30,11 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'relationship_app/register.html'
   
+def admin_view(request):
+    pass
+
+def member_view(request):
+    pass
+
+def librarian_view(request):
+    pass
