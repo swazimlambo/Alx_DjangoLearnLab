@@ -30,7 +30,7 @@ class Librarian(models.Model):
     def __str__(self):
         return self.name
 
-class UserProfile(User):
+class UserProfile(models.Model):
     ROLES = [
         ('Admin', 'Admin'),
         ('Member', 'Member'),
