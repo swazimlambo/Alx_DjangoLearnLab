@@ -46,6 +46,6 @@ def member_view(request):
 def librarian_view(request):
     return render(request, 'relationship_app/librarian_view.html')
 
-@permission_required
+@permission_required('relationship_app.can_add_book')
 def can_add_book(request):
     return render(request, 'relationship_app/can_add_book.html')
