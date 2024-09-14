@@ -12,6 +12,6 @@ urlspatterns = [
     path('/books/', BookListView.as_view(), name='book-list'),
     path('books/create', BookCreateView.as_view(), name='book-create'),
     path('books/delete', BookDeleteView.as_view(), name='book-delete'),
-    path('books/details', BookDetailView.as_view(), name='book-detail'),
+    path('books/detail/<int:pk>', BookDetailView.as_view(), name='book-detail'),
     path('books/update', BookUpdateView.as_view(), name='book-update')
 ]
