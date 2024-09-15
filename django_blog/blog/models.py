@@ -9,8 +9,6 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Comment(models.Model):
-    post =
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = 
