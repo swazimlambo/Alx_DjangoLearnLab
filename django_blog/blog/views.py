@@ -42,3 +42,12 @@ class PostUpdateView(UpdateView):
 
 class PostDeleteView(DeleteView, LoginRequiredMixin, UserPassesTestMixin):
     pass
+
+class CommentCreateView(CreateView):
+    pass
+
+class CommentUpdateView(UpdateView):
+    pass
+
+class CommentDeleteView(DeleteView):
+    pass
