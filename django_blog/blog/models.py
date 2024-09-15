@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Comment
 # Create your models here.
 
 class Post(models.Model):
@@ -14,3 +14,6 @@ class Comment(models.Model):
     content = models.TextField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+
+class Tag(models.Model):
+    name = models.CharField()
