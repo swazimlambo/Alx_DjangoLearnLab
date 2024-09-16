@@ -3,9 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, UpdateView, DeleteView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import SignUpForm
-from .models import Post
+from .models import Post, Comment
 from django.forms import BaseModelForm
 from django.http import HttpResponse
+from django.db.models import Q
+from django.urls import reverse_lazy
+
 
 # Create your views here.
 
@@ -62,10 +65,30 @@ class PostDeleteView(DeleteView, LoginRequiredMixin, UserPassesTestMixin):
 
 
 class CommentCreateView(CreateView):
-    pass
+    model = Comment
+    template_name = 'blog/create_comment.html'
+    fields = '__all__'
+
 
 class CommentUpdateView(UpdateView):
-    pass
+    model = Comment
+    template_name = 'blog/update_comment.html'
+
 
 class CommentDeleteView(DeleteView):
-    pass
+    model = Comment
+    template_name = 'blog/delete_comment.html'
+
+def search_post(request):
+    query = request.GET.get('q')
+    posts = Post.objects.filter(
+        Q(title__icontains=query) /
+        Q(cotent__icontains=query) / 
+        Q(tags__name__icontains=query)
+    ).distinct()
+    return render(request, 'search_results.html')
+
+class PostByTagListView(ListView):
+    model = Post 
+    template_name = 'blog/post_list.html'
+    context_object_name = 'posts'
