@@ -50,3 +50,6 @@ class FollowSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ['id', 'username', 'email', 'following']
+
+Token.objects.create
+get_user_model().objects.create_user

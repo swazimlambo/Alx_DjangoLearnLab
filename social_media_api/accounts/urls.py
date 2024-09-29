@@ -8,5 +8,5 @@ urlpatterns = [
     path('profile/', ProfileView.as_vie(), name='profile'),
     path('token/', TokenRetrieveView.as_view(), name='token'),
     path('follow/<int:user_id>/', FollowUserView.as_view(), name='follow'),
-    path('unfollower/<int:user_id>/', UnfollowUserView.as_view(), name='unfollow'),
+    path('unfollow/<int:user_id>/', UnfollowUserView.as_view(), name='unfollow'),
 ]
